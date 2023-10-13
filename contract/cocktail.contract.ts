@@ -1,0 +1,63 @@
+import joi from "joi";
+
+const drink = joi
+  .object({
+    idDrink: joi.string().required(),
+    strDrink: joi.string().required(),
+    strDrinkAlternate: joi.string().optional(),
+    strTags: joi.string().required(),
+    strVideo: joi.string().optional(),
+    strCategory: joi.string().required(),
+    strIBA: joi.string().optional(),
+    strAlcoholic: joi.string().required(),
+    strGlass: joi.string().required(),
+    strInstructions: joi.string().required(),
+    strInstructionsES: joi.string().optional(),
+    strInstructionsDE: joi.string().optional(),
+    strInstructionsFR: joi.string().optional(),
+    strInstructionsIT: joi.string().optional(),
+    "strInstructionsZH-HANS": joi.string().optional(),
+    "strInstructionsZH-HANT": joi.string().optional(),
+    strDrinkThumb: joi.string().optional(),
+    strIngredient1: joi.string().required(),
+    strIngredient2: joi.string().optional(),
+    strIngredient3: joi.string().optional(),
+    strIngredient4: joi.string().optional(),
+    strIngredient5: joi.string().optional(),
+    strIngredient6: joi.string().optional(),
+    strIngredient7: joi.string().optional(),
+    strIngredient8: joi.string().optional(),
+    strIngredient9: joi.string().optional(),
+    strIngredient10: joi.string().optional(),
+    strIngredient11: joi.string().optional(),
+    strIngredient12: joi.string().optional(),
+    strIngredient13: joi.string().optional(),
+    strIngredient14: joi.string().optional(),
+    strIngredient15: joi.string().optional(),
+    strMeasure1: joi.string().required(),
+    strMeasure2: joi.string().optional(),
+    strMeasure3: joi.string().optional(),
+    strMeasure4: joi.string().optional(),
+    strMeasure5: joi.string().optional(),
+    strMeasure6: joi.string().optional(),
+    strMeasure7: joi.string().optional(),
+    strMeasure8: joi.string().optional(),
+    strMeasure9: joi.string().optional(),
+    strMeasure10: joi.string().optional(),
+    strMeasure11: joi.string().optional(),
+    strMeasure12: joi.string().optional(),
+    strMeasure13: joi.string().optional(),
+    strMeasure14: joi.string().optional(),
+    strMeasure15: joi.string().optional(),
+    strImageSource: joi.string().optional(),
+    strImageAttribution: joi.string().optional(),
+    strCreativeCommonsConfirmed: joi.string().required().allow("Yes").allow("No"),
+    dateModified: joi.string().required(),
+  })
+  .optional();
+
+export const cocktailContract = joi
+  .object({
+    drinks: joi.array().allow(drink).allow(null).required(),
+  })
+  .required();
